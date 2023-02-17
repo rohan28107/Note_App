@@ -1,4 +1,7 @@
 const express = require('express');
+const swaggerJSdoc=require("swagger-jsdoc")
+const swaggerUi=require("swagger-ui-express")
+
 const {connection} = require("./db");
 const {userRouter} = require('./routes/User.routes');
 const {noteRouter} = require('./routes/Notes.route');
@@ -19,6 +22,24 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send("Home page");
 })
+
+const options={
+        definition:{
+            openapi:"3.0.0",
+            info:{
+                title:"Learning Swagger",
+                version:"1.0.0"
+            },
+            servers:[
+                {
+                url:"http://localhost:8080"
+                }
+            ]
+            },
+            apis:["./routes/*.js"]
+    }
+const swaggerSpec=swaggerJSdoc(options)
+app.use("/api-docs",swaggerUi.serve,swaggerUi.setup(swaggerSpec))
 
 app.use("/users", userRouter);
 app.use(authenticate);
