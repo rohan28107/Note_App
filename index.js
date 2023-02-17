@@ -5,8 +5,8 @@ const {noteRouter} = require('./routes/Notes.route');
 const {authenticate} = require('./middlewares/authenticate.middleware');
 const cors = require("cors");
 
-const dotenv = require('dotenv');
-require(dotenv).config();
+// const dotenv = require('dotenv');
+require('dotenv').config();
 
 const app = express();
 

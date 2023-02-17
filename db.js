@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-require(dotenv).config();
+// const dotenv = require('dotenv');
+require('dotenv').config();
 
 // const connection = mongoose.connect('mongodb://127.0.0.1:27017/notespsc');
 const connection = mongoose.connect(process.env.MONGOURL);
