@@ -97,7 +97,6 @@ noteRouter.post("/create", async(req, res) => {
 *       summary: It will update the user details
 *       tags: [Users]
 *       parameters:
-*           - in: path
 *               name: id
 *               schema:
 *                   type: string
@@ -150,7 +149,6 @@ noteRouter.patch("/update/:id", async(req, res) => {
 *       summary: Remove the user by id
 *       tags: [Users]
 *       parameters:
-*           - in: path
 *               name: id
 *               schema:
 *                   type: string
