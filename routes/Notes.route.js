@@ -31,18 +31,18 @@ const noteRouter = express.Router();
 /**
 * @swagger
 * /users:
-* get:
-*   summary: This will get all the user data from the database
-*   tags: [Users]
-*   responses:
-*       200:
-*           description: The list of all the users
-*           content:
-*               application/json:
-*                   schema:
-*                       type: array
-*                       item:
-*                           $ref: "#/components/schemas/User"
+*   get:
+*       summary: This will get all the user data from the database
+*       tags: [Users]
+*       responses:
+*           200:
+*               description: The list of all the users
+*               content:
+*                   application/json:
+*                       schema:
+*                           type: array
+*                           item:
+*                               $ref: "#/components/schemas/User"
 *
 */
 noteRouter.get("/", async(req, res) => {
